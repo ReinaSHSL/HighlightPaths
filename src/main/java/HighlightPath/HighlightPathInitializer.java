@@ -17,15 +17,29 @@ import java.io.IOException;
 import java.util.Properties;
 
 @SpireInitializer
-public class HighlightPathInitializer {
-    public static Color highlightColor;
+public class HighlightPathInitializer implements PostInitializeSubscriber{
+    public static String highlightColor;
 
     public HighlightPathInitializer() {
-
+        BaseMod.subscribe(this);
     }
 
     public static void initialize() {
         HighlightPathInitializer mod = new HighlightPathInitializer();
     }
 
+    @Override
+    public void receivePostInitialize() {
+        try {
+            SpireConfig highlightPathsConfig = new SpireConfig("HighlightPaths", "HighlightPathsConfig");
+            highlightPathsConfig.load();
+            if(!highlightPathsConfig.has("circleColor")) {
+                highlightPathsConfig.setString("circleColor", "#26004d");
+            }
+            highlightPathsConfig.save();
+            highlightColor = highlightPathsConfig.getString("circleColor");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
