@@ -50,8 +50,7 @@ public class RightClickMapNodePatch {
                 float spacingX = (float)ReflectionHacks.getPrivateStatic(MapRoomNode.class, "SPACING_X");
                 float scale = (float)ReflectionHacks.getPrivate(__instance, MapRoomNode.class, "scale");
                 float angle = (float)ReflectionHacks.getPrivate(__instance, MapRoomNode.class, "angle");
-                System.out.println(HighlightPathInitializer.highlightColor);
-                sb.setColor(Color.valueOf(HighlightPathInitializer.highlightColor));
+                sb.setColor(HighlightPathInitializer.highlightColorObject);
                 sb.draw(ImageMaster.MAP_CIRCLE_5,
                         __instance.x * spacingX + offsetX - 96.0f + __instance.offsetX,
                         __instance.y * Settings.MAP_DST_Y + offsetY + DungeonMapScreen.offsetY - 96.0f + __instance.offsetY,

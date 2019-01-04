@@ -3,7 +3,7 @@
   "name": "Highlight Path",
   "author_list": ["Reina", "Blank for moral support"],
   "description": "Right click on nodes to highlight them.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "sts_version": "12-20-2018",
   "mts_version": "3.6.3",
   "dependencies": ["basemod"],

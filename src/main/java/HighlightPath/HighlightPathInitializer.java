@@ -19,6 +19,7 @@ import java.util.Properties;
 @SpireInitializer
 public class HighlightPathInitializer implements PostInitializeSubscriber{
     public static String highlightColor;
+    public static Color highlightColorObject;
 
     public HighlightPathInitializer() {
         BaseMod.subscribe(this);
@@ -41,5 +42,6 @@ public class HighlightPathInitializer implements PostInitializeSubscriber{
         } catch (IOException e) {
             e.printStackTrace();
         }
+        highlightColorObject = Color.valueOf(highlightColor);
     }
 }
